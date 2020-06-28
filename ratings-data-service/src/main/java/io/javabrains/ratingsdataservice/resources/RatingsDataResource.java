@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("ratingsdata")
+@RequestMapping("/ratingsdata")
 public class RatingsDataResource {
 
-    @RequestMapping("/movieId")
+    @RequestMapping("/{movieId}")
     public Rating getRating(@PathVariable("movieId") String movieId){
         return new Rating(movieId,1);
     }
