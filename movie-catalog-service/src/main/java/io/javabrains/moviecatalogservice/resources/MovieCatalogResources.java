@@ -23,7 +23,7 @@ public class MovieCatalogResources {
     public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
 
 
-        UserRating ratings = restTemplate.getForObject("http://localhost:8081/ratingsdata/users/" + userId, UserRating.class);
+        UserRating ratings = restTemplate.getForObject("http://localhost:8083/ratingsdata/users/" + userId, UserRating.class);
 
         return ratings.getUserRating().stream().map(rating -> {
 
