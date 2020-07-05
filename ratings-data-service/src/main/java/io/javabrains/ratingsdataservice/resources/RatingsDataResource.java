@@ -21,12 +21,13 @@ public class RatingsDataResource {
     @RequestMapping("/users/{userId}")
     public UserRating getRatings(@PathVariable("userId") String userId) {
         List<Rating> ratings = Arrays.asList(
-                new Rating("1", 2),
-                new Rating("2", 4),
-                new Rating("3", 5)
+                new Rating("100", 2),
+                new Rating("200", 4),
+                new Rating("300", 5)
         );
         UserRating userRating = new UserRating();
-        userRating.setUserRating(ratings);
+        userRating.setRatings(ratings);
+        userRating.setUserId(userId);
         return userRating;
     }
 
